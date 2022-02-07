@@ -11,8 +11,6 @@ class Game:
     def run_game(self):
         self.display_welcome()
         self.select_gesture()
-        self.user_gesture_capture()
-        self.ai_one.choose_gesture()
 
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
@@ -33,10 +31,14 @@ class Game:
     def select_gesture(self):
         count = 0
         for gesture in self.player_one.list_of_gestures:
-            print(f'Input {count} to select {self.player_one.list_of_gestures[count]}')
+            print(f'Input {count} to select {gesture}')
             count += 1
+        self.human_one.choose_gesture() # can call user gesture method here instead of in run game
+        self.ai_one.choose_gesture() # may need to place ai gesture here too
 
     def user_gesture_capture(self):
-        user_gesture = int(input())
-        chosen_gesture = self.human_one.list_of_gestures[user_gesture]
-        print(chosen_gesture)
+        # user_gesture = int(input())
+        # chosen_gesture = self.human_one.list_of_gestures[user_gesture]
+        # print(chosen_gesture) # print chosen gesture
+        # return chosen_gesture # or return chosen gesture, return might be better for comparison condition later
+        pass
