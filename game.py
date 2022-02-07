@@ -1,12 +1,15 @@
 from human import Human
 from ai import AI
+from player import Player
 
 class Game:
     def __init__(self):
-        pass
+        self.player_one = Player()
+        self.ai_one = AI()
 
     def run_game(self):
         self.display_welcome()
+        self.ai_one.choose_gesture()
 
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
