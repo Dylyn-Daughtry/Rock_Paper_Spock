@@ -1,4 +1,5 @@
-
+from human import Human
+from ai import AI
 
 class Game:
 
@@ -20,6 +21,19 @@ class Game:
         'Lizard eats Paper \n' +
         'Paper disproves Spock \n' + 
         'Spock vaporizes Rock \n') 
+
+    def number_of_players(self):
+        pass
+
+    def display_choices(self):
+        pass
+
+    
+    
+    
+    
+
+    
 
 
     
