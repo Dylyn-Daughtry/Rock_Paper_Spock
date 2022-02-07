@@ -10,6 +10,7 @@ class Game:
     def run_game(self):
         self.display_welcome()
         self.ai_one.choose_gesture()
+        self.select_gesture()
 
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
@@ -27,5 +28,8 @@ class Game:
     def number_of_players(self):
         pass
 
-    def display_choices(self):
-        pass
+    def select_gesture(self):
+        count = 0
+        for gesture in self.player_one.list_of_gestures:
+            print(f'Input {count} to select {self.player_one.list_of_gestures[count]}')
+            count += 1
