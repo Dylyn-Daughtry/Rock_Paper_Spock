@@ -5,12 +5,14 @@ from player import Player
 class Game:
     def __init__(self):
         self.player_one = Player()
+        self.human_one = Human()
         self.ai_one = AI()
 
     def run_game(self):
         self.display_welcome()
-        self.ai_one.choose_gesture()
         self.select_gesture()
+        self.user_gesture_capture()
+        self.ai_one.choose_gesture()
 
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
@@ -33,3 +35,8 @@ class Game:
         for gesture in self.player_one.list_of_gestures:
             print(f'Input {count} to select {self.player_one.list_of_gestures[count]}')
             count += 1
+
+    def user_gesture_capture(self):
+        user_gesture = int(input())
+        chosen_gesture = self.human_one.list_of_gestures[user_gesture]
+        print(chosen_gesture)

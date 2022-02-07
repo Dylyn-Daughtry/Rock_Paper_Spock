@@ -6,6 +6,7 @@ class Player:
         self.chosen_gesture = ""
         self.list_of_gestures = []
         self.gestures()
+
     def choose_gesture(self):
         pass
 
@@ -15,6 +16,7 @@ class Player:
         scissors = 'Scissors'
         lizard = 'Lizard'
         spock = 'Spock'
+        
         self.list_of_gestures.append(rock)
         self.list_of_gestures.append(paper)
         self.list_of_gestures.append(scissors)
