@@ -2,12 +2,11 @@ from human import Human
 from ai import AI
 
 class Game:
-
-    
+    def __init__(self):
+        pass
 
     def run_game(self):
         self.display_welcome()
-
 
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
@@ -27,15 +26,3 @@ class Game:
 
     def display_choices(self):
         pass
-
-    
-    
-    
-    
-
-    
-
-
-    
-    
-     
