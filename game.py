@@ -6,15 +6,13 @@ class Game:
     def __init__(self):
         self.player_one = Player()
         self.human_one = Human()
+        self.human_two = Human()
         self.ai_one = AI()
 
     def run_game(self):
-        self.display_welcome()
-        # count = 0
-        # while count < 3:
-        # self.select_gesture()
-        self.determine_winner()
-            # count += 1
+        # self.display_welcome()
+        self.number_of_players()
+        # self.determine_winner()
     
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
@@ -33,7 +31,9 @@ class Game:
         # need display message to ask for number of players
         # if condition may be needed to create player objects in Player file if more than two
         # if condition may be needed for whether the player(s) are human or ai
-        pass
+        print('Press 1 for single player\n' +
+        'Press 2 for mutliplayer')
+        choose_game_mode = input()
 
     def select_gesture(self):
         count = 0
@@ -53,10 +53,88 @@ class Game:
     #     player_two_wins = 0
     #     ai_wins = 0
 
-    def determine_winner(self):
+    def human_vs_ai(self):
         player_one_wins = self.player_one.wins
         player_two_wins = self.player_one.wins
         
+        while player_one_wins != 2 and player_two_wins != 2:
+            self.select_gesture()
+            if self.human_one.get_gesture() == self.ai_one.chosen_gesture:
+                print(f'Its a Tie!')
+            elif self.human_one.get_gesture() == self.player_one.list_of_gestures[0]:
+                if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
+                    print('Rock crushes scissors!')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
+                    print('Paper covers Rock!')
+                    player_two_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
+                    print('Rock crushes Lizard!')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                    print('Spock Vaporizes Rock!')
+                    player_two_wins += 1
+            elif self.human_one.get_gesture() == self.player_one.list_of_gestures[1]:
+                if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                    print('Paper covers Rock')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
+                    print('Scissors cut Paper')
+                    player_two_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
+                    print('Lizard eats Paper')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                    print('Paper disproves Spock')
+                    player_one_wins += 1
+            elif self.human_one.get_gesture() == self.player_one.list_of_gestures[2]:
+                if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                    print('Rock crushes Scissors')
+                    player_two_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
+                    print('Scissors cut Paper')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
+                    print('Scissors decapitates Lizard')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                    print('Spock Smashes Scissors')
+                    player_two_wins += 1
+            elif self.human_one.get_gesture() == self.player_one.list_of_gestures[3]:
+                if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                    print('Rock crushes Lizard')
+                    player_two_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
+                    print('Lizard eats Paper')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
+                    print('Scissors decapiates Lizard')
+                    player_two_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                    print('Lizard poisons Spock')
+                    player_one_wins += 1
+            elif self.human_one.get_gesture() == self.player_one.list_of_gestures[4]:
+                if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                    print('Spock vaporizes Rock')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
+                    print('Paper disproves Spock')
+                    player_two_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
+                    print('Spock smashes Scissors')
+                    player_one_wins += 1
+                elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
+                    print('Lizard poisons Spock')
+                    player_two_wins += 1
+
+        if player_one_wins > player_two_wins:
+            print('You win!')
+        elif player_two_wins > player_one_wins:
+            print('AI two wins!')
+
+    def human_vs_human(self):
+        player_one_wins = self.player_one.wins
+        player_two_wins = self.player_one.wins
         
         while player_one_wins != 2 and player_two_wins != 2:
             self.select_gesture()
