@@ -11,11 +11,11 @@ class Player:
         pass
 
     def gestures(self):
-        rock = 'Rock'
-        paper = 'Paper'
-        scissors = 'Scissors'
-        lizard = 'Lizard'
-        spock = 'Spock'
+        rock = 'Rock' # index 0
+        paper = 'Paper' # index 1
+        scissors = 'Scissors' # index 2
+        lizard = 'Lizard' # index 3
+        spock = 'Spock' # index 4
         
         self.list_of_gestures.append(rock)
         self.list_of_gestures.append(paper)
