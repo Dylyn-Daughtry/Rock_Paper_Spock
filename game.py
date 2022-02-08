@@ -11,7 +11,8 @@ class Game:
     def run_game(self):
         self.display_welcome()
         self.select_gesture()
-
+        self.determine_winner()
+    
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
         'Rock crushes Scissors\n' +
@@ -48,12 +49,13 @@ class Game:
     def determine_winner(self):
         if self.human_one.get_gesture() == self.ai_one.chosen_gesture:
             print(f'Its a Tie!')
-        elif self.player_one.chosen_gesture == 'Rock':
-            if self.ai_one.chosen_gesture == 'Scissors':
+        elif self.human_one.get_gesture() == self.player_one.list_of_gestures[0]:
+            if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
                 print('Rock crushes scissors!')
-            elif self.ai_one.chosen_gesture == 'Paper':
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
                 print('Paper covers Rock!')
-            elif self.ai_one.chosen_gesture == 'Lizard':
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
                 print('Rock crushes Lizard!')
-            elif self.ai_one.chosen_gesture == 'Spock':
-                print('Spock Vaporizes Rock')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                print('Spock Vaporizes Rock!')
+        
