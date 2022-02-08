@@ -26,6 +26,9 @@ class Game:
         'Spock vaporizes Rock \n') 
 
     def number_of_players(self):
+        # need display message to ask for number of players
+        # if condition may be needed to create player objects in Player file if more than two
+        # if condition may be needed for whether the player(s) are human or ai
         pass
 
     def select_gesture(self):
