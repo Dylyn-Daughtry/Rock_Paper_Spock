@@ -40,14 +40,13 @@ class Game:
         self.ai_one.choose_gesture() # may need to place ai gesture here too
 
     def user_gesture_capture(self):
-        # user_gesture = int(input())
-        # chosen_gesture = self.human_one.list_of_gestures[user_gesture]
-        # print(chosen_gesture) # print chosen gesture
+        user_gesture = int(input())
+        chosen_gesture = self.human_one.choose_gesture(user_gesture)
+        print(chosen_gesture) # print chosen gesture
         # return chosen_gesture # or return chosen gesture, return might be better for comparison condition later
-        pass
 
     def determine_winner(self):
-        if self.human_one.chosen_gesture == self.ai_one.chosen_gesture:
+        if self.human_one.get_gesture() == self.ai_one.chosen_gesture:
             print(f'Its a Tie!')
         elif self.player_one.chosen_gesture == 'Rock':
             if self.ai_one.chosen_gesture == 'Scissors':
