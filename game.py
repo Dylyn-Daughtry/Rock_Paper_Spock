@@ -40,6 +40,7 @@ class Game:
         print('Choose game mode:\n')
         print('Press 1 for single player\n' +
         'Press 2 for mutliplayer')
+        print()
         choose_game_mode = input()
 
         if choose_game_mode == '1':
@@ -52,13 +53,12 @@ class Game:
         for gesture in self.human_one.get_gesture_list():
             print(f'Input {count + 1} to select {gesture}')
             count += 1
-        #self.human_one.choose_gesture() # can call user gesture method here instead of in run game
-        #self.ai_one.choose_gesture() # may need to place ai gesture here too
     
     def singleplayer(self):
         self.display_gesture_options()
         self.human_one.choose_gesture()
         self.ai_one.choose_gesture()
+        clear()
 
     def multiplayer(self):
         self.display_gesture_options()
@@ -144,7 +144,7 @@ class Game:
         if player_one_wins > player_two_wins:
             print('You win!')
         elif player_two_wins > player_one_wins:
-            print('AI two wins!')
+            print('AI wins!')
 
     def human_vs_human(self):
         player_one_wins = self.player_one.wins
