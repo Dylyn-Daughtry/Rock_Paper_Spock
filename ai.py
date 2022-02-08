@@ -7,4 +7,5 @@ class AI(Player):
 
     def choose_gesture(self):
         self.chosen_gesture = random.choice(self.list_of_gestures)
-        print(self.chosen_gesture)
+        print(f'Your opponent chose {self.chosen_gesture}.')
+        return self.chosen_gesture
