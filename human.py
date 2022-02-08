@@ -5,10 +5,15 @@ class Human(Player):
         super().__init__()
 
     def choose_gesture(self):
-        user_gesture_choice = int(input()) - 1
-        self.chosen_gesture = self.list_of_gestures[user_gesture_choice]
-        while user_gesture_choice not in range(-1, len(self.list_of_gestures)):
-            print('Selection not available please choose a number from the list')
+        is_gesture = False
+        while is_gesture != True:
+            user_gesture_choice = int(input()) - 1
+            if user_gesture_choice not in range(0, 5):
+                print('Bad input. Please select again.')
+            else:
+                self.chosen_gesture = self.list_of_gestures[user_gesture_choice]
+                is_gesture = True
+
         return self.chosen_gesture 
         
 
