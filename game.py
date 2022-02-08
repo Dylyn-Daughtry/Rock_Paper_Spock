@@ -1,6 +1,10 @@
 from human import Human
 from ai import AI
 from player import Player
+import os
+clear = lambda: os.system('cls')
+
+
 
 class Game:
     def __init__(self):
@@ -10,21 +14,24 @@ class Game:
         self.ai_one = AI()
 
     def run_game(self):
-        # self.display_welcome()
+        self.display_welcome()
         self.number_of_players()
     
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
-        'Rock crushes Scissors\n' +
-        'Scissors cuts Paper\n' +
-        'Paper covers Rock\n' +
-        'Rock crushes Lizard\n' +
-        'Lizard poisons Spock\n' +
-        'Spock smashes Scissors\n' + 
-        'Scissors decapitates Lizard\n' + 
-        'Lizard eats Paper \n' +
-        'Paper disproves Spock \n' + 
-        'Spock vaporizes Rock \n') 
+        '\n' +
+        'The rules are as follows:\n' +
+        '\n' +
+        '   -Rock crushes Scissors\n' +
+        '   -Scissors cuts Paper\n' +
+        '   -Paper covers Rock\n' +
+        '   -Rock crushes Lizard\n' +
+        '   -Lizard poisons Spock\n' +
+        '   -Spock smashes Scissors\n' + 
+        '   -Scissors decapitates Lizard\n' + 
+        '   -Lizard eats Paper \n' +
+        '   -Paper disproves Spock \n' + 
+        '   -Spock vaporizes Rock \n') 
 
     def number_of_players(self):
         # need display message to ask for number of players
@@ -43,7 +50,7 @@ class Game:
     def display_gesture_options(self):
         count = 0
         for gesture in self.human_one.get_gesture_list():
-            print(f'Input {count} to select {gesture}')
+            print(f'Input {count + 1} to select {gesture}')
             count += 1
         #self.human_one.choose_gesture() # can call user gesture method here instead of in run game
         #self.ai_one.choose_gesture() # may need to place ai gesture here too
@@ -133,7 +140,7 @@ class Game:
                 elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
                     print('Lizard poisons Spock')
                     player_two_wins += 1
-
+            
         if player_one_wins > player_two_wins:
             print('You win!')
         elif player_two_wins > player_one_wins:
