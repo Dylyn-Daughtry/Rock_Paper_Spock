@@ -58,4 +58,40 @@ class Game:
                 print('Rock crushes Lizard!')
             elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
                 print('Spock Vaporizes Rock!')
+        elif self.human_one.get_gesture() == self.player_one.list_of_gestures[1]:
+            if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                print('Paper covers Rock')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
+                print('Scissors cut Paper')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
+                print('Lizard eats Paper')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                print('Paper disproves Spock')
+        elif self.human_one.get_gesture() == self.player_one.list_of_gestures[2]:
+            if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                print('Rock crushes Scissors')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
+                print('Scissors cut Paper')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
+                print('Scissors decapitates Lizard')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                print('Spock Smashes Scissors')
+        elif self.human_one.get_gesture() == self.player_one.list_of_gestures[3]:
+            if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                print('Rock crushes Lizard')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
+                print('Lizard eats Paper')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
+                print('Scissors decapiates Lizard')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[4]:
+                print('Lizard poisons Spock')
+        elif self.human_one.get_gesture() == self.player_one.list_of_gestures[4]:
+            if self.ai_one.chosen_gesture == self.player_one.list_of_gestures[0]:
+                print('Spock vaporizes Rock')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[1]:
+                print('Paper disproves Spock')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[2]:
+                print('Spock smashes Scissors')
+            elif self.ai_one.chosen_gesture == self.player_one.list_of_gestures[3]:
+                print('Lizard poisons Spock')
         
