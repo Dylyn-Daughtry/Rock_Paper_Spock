@@ -12,3 +12,6 @@ class Human(Player):
 
     def get_gesture(self):
         return self.chosen_gesture
+
+    def get_gesture_list(self):
+        return self.list_of_gestures

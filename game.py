@@ -33,7 +33,7 @@ class Game:
 
     def select_gesture(self):
         count = 0
-        for gesture in self.player_one.list_of_gestures:
+        for gesture in self.human_one.get_gesture_list():
             print(f'Input {count} to select {gesture}')
             count += 1
         self.human_one.choose_gesture() # can call user gesture method here instead of in run game
