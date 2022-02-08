@@ -45,3 +45,16 @@ class Game:
         # print(chosen_gesture) # print chosen gesture
         # return chosen_gesture # or return chosen gesture, return might be better for comparison condition later
         pass
+
+    def determine_winner(self):
+        if self.human_one.chosen_gesture == self.ai_one.chosen_gesture:
+            print(f'Its a Tie!')
+        elif self.player_one.chosen_gesture == 'Rock':
+            if self.ai_one.chosen_gesture == 'Scissors':
+                print('Rock crushes scissors!')
+            elif self.ai_one.chosen_gesture == 'Paper':
+                print('Paper covers Rock!')
+            elif self.ai_one.chosen_gesture == 'Lizard':
+                print('Rock crushes Lizard!')
+            elif self.ai_one.chosen_gesture == 'Spock':
+                print('Spock Vaporizes Rock')
