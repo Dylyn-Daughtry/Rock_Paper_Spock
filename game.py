@@ -3,7 +3,7 @@ from ai import AI
 from player import Player
 import os
 clear = lambda: os.system('cls')
-
+import time
 
 
 class Game:
@@ -16,7 +16,9 @@ class Game:
     def run_game(self):
         self.display_welcome()
         self.number_of_players()
-    
+        print()
+        print()
+        self.random_fact()
     def display_welcome(self):
         print(f'Welcome Player(s) to Rock, Paper, Scissors, Lizard, Spock \n' + 
         '\n' +
@@ -157,7 +159,7 @@ class Game:
                 print(f'Its a Tie!')
             elif self.human_one.get_gesture() == self.player_one.list_of_gestures[0]:
                 if self.human_two.chosen_gesture == self.player_one.list_of_gestures[1]:
-                    print('Rock crushes scissors!')
+                    print('Rock crushes Scissors!')
                     player_one_wins += 1
                 elif self.human_two.chosen_gesture == self.player_one.list_of_gestures[2]:
                     print('Paper covers Rock!')
@@ -226,7 +228,14 @@ class Game:
             print('Player one wins!')
         elif player_two_wins > player_one_wins:
             print('Player two wins!')
-
+       
+    def random_fact(self):
+        print('Random fact:\n' +
+        'Sam Kass was the original inventor of the game Rock, Paper, Scissors, Lizard, Spock\n' +
+        'in the Rothman Disintegration (S05E17), while introducing the game to kripke,\n' +
+        'sheldon says "All hail Same Kass!" It is followed by a "Hail!" from the rest of the cast\n')
+        
+        
         
        
     
